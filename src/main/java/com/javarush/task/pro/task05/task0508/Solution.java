@@ -16,8 +16,9 @@ public class Solution {
             strings[i] = new Scanner(System.in).nextLine();
 
         for(int i=0; i<strings.length; i++) {
-            for (int j=i+1; j<strings.length; j++) {
-                if(strings[i]!= null && strings[j] != null && strings[i].equals(strings[j])) {
+            String str = strings[i];
+            for (int j=i; j<strings.length; j++) {
+                if(str!= null && strings[j] != null && i!=j && str.equals(strings[j]) ) {
                     strings[i] = null;
                     strings[j] = null;
                 }
