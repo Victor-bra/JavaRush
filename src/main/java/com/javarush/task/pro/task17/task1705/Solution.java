@@ -1,9 +1,9 @@
-package com.javarush.task.pro.task17.task1704;
+package com.javarush.task.pro.task17.task1705;
 
 import java.util.ArrayList;
 
 /*
-Космическая одиссея ч.2
+Космическая одиссея ч.3
 */
 
 public class Solution {
