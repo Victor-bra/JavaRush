@@ -19,7 +19,8 @@ public class Solution {
                 Collections.addAll(words, reader.readLine().split(" "));
             }
         }
-        //words.stream().forEach(System.out::println);
+        words.stream().forEach(System.out::println);
+        System.out.println("////////////////////");
         StringBuilder result = getLine(words.toArray(new String[words.size()]));
         System.out.println(result.toString());
     }
