@@ -34,4 +34,15 @@ public class Horse {
     public void setDistance(double distance) {
         this.distance = distance;
     }
+
+    public void move() {
+        this.distance += speed * Math.random();
+    }
+
+    public void print() {
+        StringBuilder strB = new StringBuilder();
+        for (int i = 0; i < (int) this.distance; i++)
+            strB.append(".");
+        System.out.println(strB.append(name));
+    }
 }

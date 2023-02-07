@@ -15,8 +15,8 @@ public class Hippodrome {
         return horses;
     }
 
-    public void run(){
-        for(int i=1;i<=100;i++){
+    public void run() {
+        for (int i = 1; i <= 100; i++) {
             this.move();
             this.print();
             try {
@@ -27,12 +27,35 @@ public class Hippodrome {
         }
     }
 
-    public void move(){
-
+    public void move() {
+        if (horses != null) {
+            for (Horse horse : horses) {
+                horse.move();
+            }
+        }
     }
 
-    public void print(){
+    public void print() {
+        if (horses != null) {
+            for (Horse horse : horses) {
+                horse.print();
+            }
+            for (int i = 0; i < 10; i++)
+                System.out.println();
+        }
+    }
 
+    public Horse getWinner() {
+        Horse winnerHorse = horses.get(0);
+        for (Horse horse : horses) {
+            if (horse.getDistance() > winnerHorse.getDistance())
+                winnerHorse = horse;
+        }
+        return winnerHorse;
+    }
+
+    public void printWinner() {
+        System.out.println("Winner is " + getWinner().getName() + "!");
     }
 
     public static void main(String[] args) {
@@ -41,6 +64,7 @@ public class Hippodrome {
         horses1.add(new Horse("horse2", 3, 0));
         horses1.add(new Horse("horse3", 3, 0));
         game = new Hippodrome(horses1);
-
+        game.run();
+        game.printWinner();
     }
 }
