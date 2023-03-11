@@ -83,7 +83,15 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void selectedTabChanged() {
-
+        switch (tabbedPane.getSelectedIndex()){
+            case 0:
+                controller.setPlainText(plainTextPane.getText());
+                break;
+            case 1:
+                plainTextPane.setText(controller.getPlainText());
+                break;
+        }
+        resetUndo();
     }
 
     public boolean canUndo() {
@@ -133,6 +141,25 @@ public class View extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        switch (e.getActionCommand()){
+            case "Новый":
+                controller.createNewDocument();
+                break;
+            case "Открыть":
+                controller.openDocument();
+                break;
+            case "Сохранить":
+                controller.saveDocument();
+                break;
+            case "Сохранить как...":
+                controller.saveDocumentAs();
+                break;
+            case "Выход":
+                controller.exit();
+                break;
+            case "О программе":
+                this.showAbout();
+                break;
+        }
     }
 }
